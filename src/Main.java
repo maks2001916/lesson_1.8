@@ -20,6 +20,19 @@ public class Main {
         }
         return ratio;
     }
+    public static int determiningTheDistance(int distance) {
+        int days = 0;
+        if (distance <= 20) {
+            days ++;
+        }
+        if (distance >= 20 && distance <= 60 ) {
+            days += 2;
+        }
+        if (distance >= 60 && distance <= 100) {
+            days += 3;
+        }
+        return days;
+    }
     public static void main(String[] args) {
         int currentYear = LocalDate.now().getYear();
         findingALeapYear(currentYear);
@@ -44,6 +57,12 @@ public class Main {
         } else if (yearOfProductionTwo == 1 && clientOC == 0) {
             System.out.println("Установите мобильную версию приложения для IOS");
         }
+        //Третье задание
+        int deliveryDistance = 95;
+        determiningTheDistance(deliveryDistance);
+        int deliveryDays = determiningTheDistance(deliveryDistance);
+        System.out.println("Потребуется дней " + deliveryDays);
     }
+
 
 }
