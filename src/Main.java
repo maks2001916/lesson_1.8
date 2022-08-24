@@ -2,16 +2,16 @@ import java.time.LocalDate;
 
 public class Main {
     //Первое задание
-    public static int findingALeapYear(int currentYear) {
-        int variable = 0;
+    private static int findingALeapYear(int currentYear) {
+        int isLeapYear = 0;
         if (currentYear % 4 == 0 && currentYear % 100 != 0 || currentYear % 400 == 0) {
-             variable = 0;
+            isLeapYear = 0;
         } else {
-             variable = 1;
+            isLeapYear = 1;
         }
-        return variable;
+        return isLeapYear;
     }
-    public static int yearOfProduction(int year) {
+    private static int yearOfProduction(int year) {
         int ratio = 0;
         if (year <= 2015) {
             ratio = 0;
@@ -20,7 +20,7 @@ public class Main {
         }
         return ratio;
     }
-    public static int determiningTheDistance(int distance) {
+    private static int determiningTheDistance(int distance) {
         int days = 0;
         if (distance <= 20) {
             days ++;
@@ -33,9 +33,12 @@ public class Main {
         }
         return days;
     }
-    public static void main(String[] args) {
+    private static void printYearInfo() {
         int currentYear = LocalDate.now().getYear();
-        findingALeapYear(currentYear);
+    }
+    private static void main(String[] args) {
+        printYearInfo();
+        int currentYear  = printYearInfo();
         int result = findingALeapYear(currentYear);
         if (result == 0) {
             System.out.println(currentYear + " - високосный год");
@@ -44,8 +47,7 @@ public class Main {
         }
         //Второе задание
         int clientOC = 1;
-        int currentYearTwo = LocalDate.now().getYear();;
-        yearOfProduction(currentYearTwo);
+        int currentYearTwo = printYearInfo();
         int yearOfProductionTwo = yearOfProduction(currentYearTwo);
         if (yearOfProductionTwo == 0 && clientOC == 1 ) {
             System.out.println("Установите облегчённую версию приложения для Android");
@@ -59,7 +61,6 @@ public class Main {
         }
         //Третье задание
         int deliveryDistance = 95;
-        determiningTheDistance(deliveryDistance);
         int deliveryDays = determiningTheDistance(deliveryDistance);
         System.out.println("Потребуется дней " + deliveryDays);
     }
