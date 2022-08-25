@@ -33,8 +33,8 @@ public class Main {
         }
         return days;
     }
-    private static void buildingAMessage() {
-        int clientOC = 1;
+    private static int buildingAMessage(int clientOSTwo) {
+        int clientOC = clientOSTwo;
         int currentYearTwo = LocalDate.now().getYear();
         int yearOfProductionTwo = yearOfProduction(currentYearTwo);
         if (yearOfProductionTwo == 0 && clientOC == 1 ) {
@@ -47,6 +47,7 @@ public class Main {
         } else if (yearOfProductionTwo == 1 && clientOC == 0) {
             System.out.println("Установите мобильную версию приложения для IOS");
         }
+        return currentYearTwo;
     }
     public static void main(String[] args) {
         int currentYear  = LocalDate.now().getYear();
@@ -57,8 +58,9 @@ public class Main {
             System.out.println(currentYear + " - не високосный год");
         }
         //Второе задание
-
-
+        int clientOC = 1;
+        int clientOSTwo = buildingAMessage(clientOC);
+        System.out.println(clientOSTwo);
         //Третье задание
         int deliveryDistance = 95;
         int deliveryDays = determiningTheDistance(deliveryDistance);
