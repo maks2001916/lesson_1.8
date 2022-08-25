@@ -33,21 +33,9 @@ public class Main {
         }
         return days;
     }
-    private static void printYearInfo() {
-        int currentYear = LocalDate.now().getYear();
-    }
-    private static void main(String[] args) {
-        printYearInfo();
-        int currentYear  = printYearInfo();
-        int result = findingALeapYear(currentYear);
-        if (result == 0) {
-            System.out.println(currentYear + " - високосный год");
-        } else {
-            System.out.println(currentYear + " - не високосный год");
-        }
-        //Второе задание
+    private static void buildingAMessage() {
         int clientOC = 1;
-        int currentYearTwo = printYearInfo();
+        int currentYearTwo = LocalDate.now().getYear();
         int yearOfProductionTwo = yearOfProduction(currentYearTwo);
         if (yearOfProductionTwo == 0 && clientOC == 1 ) {
             System.out.println("Установите облегчённую версию приложения для Android");
@@ -59,6 +47,18 @@ public class Main {
         } else if (yearOfProductionTwo == 1 && clientOC == 0) {
             System.out.println("Установите мобильную версию приложения для IOS");
         }
+    }
+    public static void main(String[] args) {
+        int currentYear  = LocalDate.now().getYear();
+        int result = findingALeapYear(currentYear);
+        if (result == 0) {
+            System.out.println(currentYear + " - високосный год");
+        } else {
+            System.out.println(currentYear + " - не високосный год");
+        }
+        //Второе задание
+
+
         //Третье задание
         int deliveryDistance = 95;
         int deliveryDays = determiningTheDistance(deliveryDistance);
